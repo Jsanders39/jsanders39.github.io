@@ -3,36 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LCDR Jessica Sanders | GitHub Portfolio</title>
+    <title>GitHub Portfolio</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f7f8fa;
             color: #222;
+            line-height: 1.6;
         }
 
-        .container {
-            max-width: 1000px;
+        .page-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 40px;
+            max-width: 1200px;
             margin: 40px auto;
+            padding: 0 20px;
+            align-items: start;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 40px;
+            align-self: start;
+        }
+
+        .sidebar h1 {
+            font-size: 2.2rem;
+            margin-top: 0;
+            margin-bottom: 18px;
+            color: #1b5fa7;
+        }
+
+        .profile-photo {
+            width: 100%;
+            max-width: 220px;
+            border-radius: 10px;
+            display: block;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        }
+
+        .sidebar-subtitle {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .sidebar-note {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .sidebar-links a {
+            display: inline-block;
+            margin-bottom: 10px;
+            color: #0056b3;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .sidebar-links a:hover {
+            text-decoration: underline;
+        }
+
+        .content {
             background: white;
             padding: 40px;
             box-shadow: 0 4px 16px rgba(0,0,0,0.08);
             border-radius: 12px;
         }
 
-        h1 {
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-            color: #0b1f3a;
-        }
-
         h2 {
-            margin-top: 40px;
+            margin-top: 0;
+            margin-bottom: 20px;
             border-bottom: 2px solid #d9dce3;
             padding-bottom: 8px;
             color: #0b1f3a;
+            font-size: 1.8rem;
         }
 
         h3 {
@@ -41,13 +96,14 @@
         }
 
         p {
-            line-height: 1.6;
+            margin-top: 0;
         }
 
         .subtitle {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             color: #555;
             margin-bottom: 20px;
+            font-weight: 600;
         }
 
         .section-item {
@@ -78,143 +134,273 @@
             text-decoration: underline;
         }
 
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-bottom: 10px;
+        }
+
+        .skill-box {
+            background: #f3f6fb;
+            padding: 16px 18px;
+            border-radius: 10px;
+        }
+
+        .skill-box h3 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .skill-box ul {
+            margin: 0;
+            padding-left: 18px;
+        }
+
         .project-box {
             background: #f3f6fb;
             padding: 18px 20px;
             border-radius: 10px;
             margin-top: 12px;
+            border-left: 5px solid #0056b3;
         }
 
         .note {
             color: #555;
         }
+
+        .footer-note {
+            margin-top: 40px;
+            font-size: 0.95rem;
+            color: #666;
+            border-top: 1px solid #d9dce3;
+            padding-top: 16px;
+        }
+
+        @media (max-width: 900px) {
+            .page-layout {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .profile-photo {
+                max-width: 200px;
+            }
+
+            .content {
+                padding: 28px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>LCDR Jessica Sanders</h1>
-        <p class="subtitle">Operations Research Student – Naval Postgraduate School</p>
+    <div class="page-layout">
 
-        <p>
-            Active-duty U.S. Navy Medical Service Corps officer with leadership experience across healthcare operations,
-            business administration, training, contract oversight, and performance management. Currently pursuing graduate
-            studies in Operations Research at the Naval Postgraduate School with interests in analytics, optimization,
-            decision support, and healthcare systems improvement.
-        </p>
+        <aside class="sidebar">
+            <h1>LCDR Jessica Sanders</h1>
 
-        <h2>Education</h2>
+            <img src="profile.jpg" alt="Professional photo" class="profile-photo">
 
-        <div class="section-item">
-            <h3>Naval Postgraduate School</h3>
-            <p class="location">Monterey, CA, USA</p>
-            <p><strong>Operations Research</strong></p>
-            <p class="date">2025–Present</p>
-        </div>
-
-        <div class="section-item">
-            <h3>Naval War College</h3>
-            <p class="location">Newport, RI, USA</p>
-            <p><strong>Master of Defense and Strategic Studies</strong></p>
-            <p class="date">2019–2022</p>
-        </div>
-
-        <div class="section-item">
-            <h3>Georgia State University</h3>
-            <p class="location">Atlanta, GA, USA</p>
-            <p><strong>Master of Business Administration</strong></p>
-            <p><strong>Master of Healthcare Administration</strong></p>
-            <p class="date">2014–2016</p>
-        </div>
-
-        <div class="section-item">
-            <h3>Midway University</h3>
-            <p class="location">Midway, KY, USA</p>
-            <p><strong>Bachelor of Arts, Business Administration</strong></p>
-            <p><strong>Bachelor of Arts, Equine Management</strong></p>
-            <p class="date">2004–2008</p>
-        </div>
-
-        <h2>Professional Experience</h2>
-
-        <div class="section-item">
-            <h3>Defense Health Agency</h3>
-            <p><strong>TRICARE Health Plan Division Officer</strong></p>
-            <p class="location">Falls Church, VA</p>
-            <p class="date">July 2022–Present</p>
-            <p>
-                Managed and integrated T5 activities and documents within the TRICARE Health Plan; collaborated with CORs,
-                performance assessment managers, and SMEs; coordinated transition planning, activities, and communication;
-                and supported contract oversight and performance standardization across multiple sections and branches.
+            <p class="sidebar-subtitle">
+                Operations Research Graduate Student<br>
+                Naval Postgraduate School
             </p>
-        </div>
 
-        <div class="section-item">
-            <h3>Officer Training Command Newport</h3>
-            <p><strong>Class Officer and Lead Instructor</strong></p>
-            <p class="location">Newport, RI</p>
-            <p class="date">May 2019–June 2022</p>
-            <p>
-                Developed and trained new active duty and reserve officer accessions; facilitated classroom instruction and
-                ethics case studies; built officer development schedules; supported curriculum development; and coordinated
-                instructor scheduling across schoolhouses and enterprise training platforms.
-            </p>
-        </div>
+            <p class="sidebar-note">Analytics, optimization, decision support, and healthcare systems improvement</p>
 
-        <div class="section-item">
-            <h3>U.S. Naval Hospital Okinawa</h3>
-            <p><strong>Department Head of Business Operations</strong></p>
-            <p class="location">Okinawa, Japan</p>
-            <p class="date">April 2018–April 2019</p>
-            <p>
-                Managed administrative functions across Referral Management, Case Management, Customer Relations, Data Quality,
-                and TRICARE operations; represented command interests in customer relations; and negotiated and implemented
-                command-wide service contracts and operational improvements.
-            </p>
-        </div>
+            <div class="sidebar-links">
+                <a href="https://github.com/Jsanders39" target="_blank">View My GitHub Profile</a><br>
+                <a href="https://jsanders39.github.io/" target="_blank">Portfolio Home</a>
+            </div>
+        </aside>
 
-        <div class="section-item">
-            <h3>U.S. Naval Hospital Okinawa</h3>
-            <p><strong>Clinic Manager</strong></p>
-            <p class="location">Okinawa, Japan</p>
-            <p class="date">April 2017–April 2018</p>
-            <p>
-                Supervised administrative operations for the Obstetrics and Gynecology Clinic, including payroll oversight,
-                workload verification, staffing support, and approval of timekeeping and reporting processes.
-            </p>
-        </div>
+        <main class="content">
+            <section>
+                <h2>About</h2>
+                <p class="subtitle">Operations Research Graduate Student – Naval Postgraduate School</p>
 
-        <div class="section-item">
-            <h3>U.S. Naval Hospital Okinawa</h3>
-            <p><strong>Department Head of Uniform Business Office</strong></p>
-            <p class="location">Okinawa, Japan</p>
-            <p class="date">April 2017–April 2019</p>
-            <p>
-                Led fiscal operations to ensure timely billing and collections across multiple healthcare systems; developed
-                and implemented training seminars to improve compliance and efficiency; supported regional third-party billing
-                initiatives; and implemented process improvements including electronic payment capabilities.
-            </p>
-        </div>
+                <p>
+                    Active-duty U.S. Navy Medical Service Corps officer with leadership experience across healthcare operations,
+                    business administration, training, contract oversight, and performance management. Currently pursuing graduate
+                    studies in Operations Research at the Naval Postgraduate School with interests in analytics, optimization,
+                    decision support, and healthcare systems improvement.
+                </p>
+            </section>
 
-        <h2>Projects</h2>
+            <section>
+                <h2>Education</h2>
 
-        <div class="project-box">
-            <h3>QR Code Generator</h3>
-            <p class="note">
-                A Streamlit application that generates downloadable QR codes from text or URLs using Python.
-            </p>
-            <p>
-                <strong>Streamlit App:</strong>
-                <a href="https://app-qr-code-generator-o6grg8hlhvctudsuayh57x.streamlit.app" target="_blank">
-                    QR Code Generator
-                </a>
-            </p>
-            <p>
-                <strong>GitHub Repository:</strong>
-                <a href="https://github.com/Jsanders39/streamlit-qr-code-generator" target="_blank">
-                    streamlit-qr-code-generator
-                </a>
-            </p>
-        </div>
+                <div class="section-item">
+                    <h3>Naval Postgraduate School</h3>
+                    <p class="location">Monterey, CA, USA</p>
+                    <p><strong>Operations Research</strong></p>
+                    <p class="date">2025–Present</p>
+                </div>
+
+                <div class="section-item">
+                    <h3>Naval War College</h3>
+                    <p class="location">Newport, RI, USA</p>
+                    <p><strong>Master of Defense and Strategic Studies</strong></p>
+                    <p class="date">2019–2022</p>
+                </div>
+
+                <div class="section-item">
+                    <h3>Georgia State University</h3>
+                    <p class="location">Atlanta, GA, USA</p>
+                    <p><strong>Master of Business Administration</strong></p>
+                    <p><strong>Master of Healthcare Administration</strong></p>
+                    <p class="date">2014–2016</p>
+                </div>
+
+                <div class="section-item">
+                    <h3>Midway University</h3>
+                    <p class="location">Midway, KY, USA</p>
+                    <p><strong>Bachelor of Arts, Business Administration</strong></p>
+                    <p><strong>Bachelor of Arts, Equine Management</strong></p>
+                    <p class="date">2004–2008</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Technical Skills</h2>
+
+                <div class="skills-grid">
+                    <div class="skill-box">
+                        <h3>Programming</h3>
+                        <ul>
+                            <li>Python</li>
+                            <li>R</li>
+                            <li>SQL</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-box">
+                        <h3>Data Analysis & Visualization</h3>
+                        <ul>
+                            <li>Pandas</li>
+                            <li>NumPy</li>
+                            <li>Matplotlib</li>
+                            <li>ggplot2</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-box">
+                        <h3>Optimization & Modeling</h3>
+                        <ul>
+                            <li>Operations Research</li>
+                            <li>Linear Programming</li>
+                            <li>Simulation</li>
+                            <li>Decision Support</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-box">
+                        <h3>Tools</h3>
+                        <ul>
+                            <li>Git / GitHub</li>
+                            <li>Streamlit</li>
+                            <li>Jupyter Notebook</li>
+                            <li>VS Code</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Professional Experience</h2>
+
+                <div class="section-item">
+                    <h3>Defense Health Agency</h3>
+                    <p><strong>TRICARE Health Plan Division Officer</strong></p>
+                    <p class="location">Falls Church, VA</p>
+                    <p class="date">July 2022–Present</p>
+                    <p>
+                        Managed and integrated T5 activities and documents within the TRICARE Health Plan; collaborated with CORs,
+                        performance assessment managers, and SMEs; coordinated transition planning, activities, and communication;
+                        and supported contract oversight and performance standardization across multiple sections and branches.
+                    </p>
+                </div>
+
+                <div class="section-item">
+                    <h3>Officer Training Command Newport</h3>
+                    <p><strong>Class Officer and Lead Instructor</strong></p>
+                    <p class="location">Newport, RI</p>
+                    <p class="date">May 2019–June 2022</p>
+                    <p>
+                        Developed and trained new active duty and reserve officer accessions; facilitated classroom instruction and
+                        ethics case studies; built officer development schedules; supported curriculum development; and coordinated
+                        instructor scheduling across schoolhouses and enterprise training platforms.
+                    </p>
+                </div>
+
+                <div class="section-item">
+                    <h3>U.S. Naval Hospital Okinawa</h3>
+                    <p><strong>Department Head of Business Operations</strong></p>
+                    <p class="location">Okinawa, Japan</p>
+                    <p class="date">April 2018–April 2019</p>
+                    <p>
+                        Managed administrative functions across Referral Management, Case Management, Customer Relations, Data Quality,
+                        and TRICARE operations; represented command interests in customer relations; and negotiated and implemented
+                        command-wide service contracts and operational improvements.
+                    </p>
+                </div>
+
+                <div class="section-item">
+                    <h3>U.S. Naval Hospital Okinawa</h3>
+                    <p><strong>Clinic Manager</strong></p>
+                    <p class="location">Okinawa, Japan</p>
+                    <p class="date">April 2017–April 2018</p>
+                    <p>
+                        Supervised administrative operations for the Obstetrics and Gynecology Clinic, including payroll oversight,
+                        workload verification, staffing support, and approval of timekeeping and reporting processes.
+                    </p>
+                </div>
+
+                <div class="section-item">
+                    <h3>U.S. Naval Hospital Okinawa</h3>
+                    <p><strong>Department Head of Uniform Business Office</strong></p>
+                    <p class="location">Okinawa, Japan</p>
+                    <p class="date">April 2017–April 2019</p>
+                    <p>
+                        Led fiscal operations to ensure timely billing and collections across multiple healthcare systems; developed
+                        and implemented training seminars to improve compliance and efficiency; supported regional third-party billing
+                        initiatives; and implemented process improvements including electronic payment capabilities.
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Projects</h2>
+
+                <div class="project-box">
+                    <h3>QR Code Generator (Python + Streamlit)</h3>
+                    <p class="note">
+                        A Streamlit application that generates downloadable QR codes from text or URLs using Python.
+                    </p>
+                    <p>
+                        <strong>Live App:</strong>
+                        <a href="https://app-qr-code-generator-o6grg8hlhvctudsuayh57x.streamlit.app" target="_blank">
+                            QR Code Generator
+                        </a>
+                    </p>
+                    <p>
+                        <strong>GitHub Repository:</strong>
+                        <a href="https://github.com/Jsanders39/streamlit-qr-code-generator" target="_blank">
+                            streamlit-qr-code-generator
+                        </a>
+                    </p>
+                </div>
+            </section>
+
+            <div class="footer-note">
+                Hosted on GitHub Pages
+            </div>
+        </main>
     </div>
 </body>
 </html>
